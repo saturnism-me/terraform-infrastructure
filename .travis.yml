@@ -1,1 +1,15 @@
-language: generic
+language: bash
+dist: trusty
+sudo: required
+cache:
+  directories:
+  - "${HOME}/bin"
+  - "${HOME}/.terraform/plugins"
+env:
+  global:
+  - PATH="${HOME}/bin:${PATH}"
+  - TMPDIR="${TMPDIR:-/tmp}"
+before_install:
+  - mkdir -p ${HOME}/.terraform/plugins
+  - wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip
+  - sudo unzip -d $HOME/bin/ /tmp/terraform.zip

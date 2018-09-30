@@ -20,7 +20,7 @@ You can have multiple projects within an organization. You need a boostrap proje
   1. `gcloud organizations add-iam-policy-binding ${GOOGLE_ORG_ID} --member serviceAccount:terraform-admin@${GOOGLE_PROJECT}.iam.gserviceaccount.com --role "roles/resourcemanager.folderAdmin"`
   1. `gcloud organizations add-iam-policy-binding ${GOOGLE_ORG_ID} --member serviceAccount:terraform-admin@${GOOGLE_PROJECT}.iam.gserviceaccount.com --role "roles/billing.admin"`
 1. Create a JSON key for the service account. Treat it with care! `gcloud iam service-accounts keys create ~/terraform-admin-sa.json --iam-account=terraform-admin@${GOOGLE_PROJECT}.iam.gserviceaccount.com`
-1. Set the location of JSON key: `export GOOGLE_APPLICATION_CREDENTIALS=$HOME/terraform-admin-sa.json"
+1. Set the location of JSON key: `export GOOGLE_CREDENTIALS=$HOME/terraform-admin-sa.json`
 
 ### Enable APIs
 1. `gcloud services enable cloudresourcemanager.googleapis.com cloudbilling.googleapis.com`
@@ -28,5 +28,5 @@ You can have multiple projects within an organization. You need a boostrap proje
 ### Terraform
 1. Configure variables in `../config.tfvars`
 1. Initialize: `terraform init`
-1. Plan: `terraform plan -var-file=../config.tfvars`
-1. Apply: `terraform apply -auto-approve -var-file=../config.tfvars`
+1. Plan: `terraform plan`
+1. Apply: `terraform apply -auto-approve`
