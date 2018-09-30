@@ -15,4 +15,4 @@ before_install:
   -in terraform-admin-sa.json.enc -out terraform-admin-sa.json -d
 - mkdir -p ${HOME}/.terraform/plugins
 - wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip
-- sudo unzip -d $HOME/bin/ /tmp/terraform.zip
+- sudo unzip -d $HOME/bin/ terraform.zip
