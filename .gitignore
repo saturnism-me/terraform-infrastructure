@@ -1,0 +1,6 @@
+*.json
+*.sw?
+*.tfstate
+*.backup
+.terraform
+keys/**
