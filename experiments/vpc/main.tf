@@ -13,6 +13,7 @@ resource "google_organization_iam_binding" "experiments-vpc-admin" {
   members = "${var.xpn-admin-members}"
 }
 
+# ISSUE: This doesn't work. https://github.com/terraform-providers/terraform-provider-google/issues/3370
 resource "google_folder_iam_binding" "experiments-vpc-admin" {
   folder  = "${google_folder.experiments-vpc.id}"
   role    = "roles/compute.xpnAdmin"
