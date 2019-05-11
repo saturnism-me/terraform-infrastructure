@@ -27,6 +27,19 @@ You can have multiple projects within an organization. You need a boostrap proje
 
 ### Terraform
 1. Configure variables in `../config.tfvars`
+
+   ```
+   admin_project = "..."
+   org_id = "..."
+   billing_account = "..."
+   terraform_backend_bucket = "..."
+   terraform_backend_project = "..."
+   ```
+
 1. Initialize: `terraform init`
 1. Plan: `terraform plan`
 1. Apply: `terraform apply -auto-approve`
+
+## Configure Travis
+1. `travis env set TF_VAR_org_id YOUR_ORG_ID`
+1. `travis env set TF_VAR_billing_account YOUR_BILLING_ACCOUNT`
