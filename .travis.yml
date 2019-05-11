@@ -5,14 +5,16 @@ cache:
   directories:
   - "${HOME}/bin"
   - "${HOME}/.terraform/plugins"
+
 env:
   global:
   - PATH="${HOME}/bin:${PATH}"
   - TMPDIR="${TMPDIR:-/tmp}"
   - GOOGLE_CREDENTAILS="${HOME}/terraform-admin-sa.json"
+
 before_install:
 - openssl aes-256-cbc -K $encrypted_3a65fcd164d2_key -iv $encrypted_3a65fcd164d2_iv
   -in terraform-admin-sa.json.enc -out terraform-admin-sa.json -d
 - mkdir -p ${HOME}/.terraform/plugins
-- wget -O /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip
-- sudo unzip -d $HOME/bin/ /tmp/terraform.zip
+- wget -O /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip
+- sudo unzip -o -d $HOME/bin/ /tmp/terraform.zip
