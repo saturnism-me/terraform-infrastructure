@@ -2,6 +2,6 @@
 *.sw?
 *.tfstate
 *.backup
+*.tfvars
 .terraform
 keys/**
-config.tfvars

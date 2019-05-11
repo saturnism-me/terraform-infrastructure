@@ -1,5 +1,6 @@
 provider "google" {
   project     = "${var.admin_project}"
+  version     = "~> 2.0.0"
 }
 
 resource "google_folder" "admin" {
