@@ -1,3 +1,25 @@
+resource "google_compute_instance" "vpc-host-bastion" {
+  project = "${google_project.experiments-vpc-host.project_id}"
+  name = "vpc-host-bastion"
+  zone = "us-central1-c"
+  machine_type = "n1-standard-1"
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-9"
+    }
+  }
+
+  network_interface {
+    network = "default"
+    access_config {
+      // Include this section to give the VM an external ip address
+    }
+  }
+
+  
+}
+
+
 resource "google_compute_instance" "vpc-project-1-instance" {
   project = "${google_project.experiments-project-1.project_id}"
   name = "vpc-project-1-instance"
