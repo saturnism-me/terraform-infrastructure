@@ -16,7 +16,7 @@ This repository contains terraform script for instracture of `saturnism.me` orga
   1. `gcloud organizations add-iam-policy-binding ${GOOGLE_ORG_ID} --member serviceAccount:terraform-admin@${GOOGLE_PROJECT}.iam.gserviceaccount.com --role "roles/resourcemanager.folderAdmin"`
   1. `gcloud organizations add-iam-policy-binding ${GOOGLE_ORG_ID} --member serviceAccount:terraform-admin@${GOOGLE_PROJECT}.iam.gserviceaccount.com --role "roles/billing.admin"`
 1. Create a JSON key for the service account. Treat it with care! `gcloud iam service-accounts keys create ~/terraform-admin-sa.json --iam-account=terraform-admin@${GOOGLE_PROJECT}.iam.gserviceaccount.com`
-1. Set the location of JSON key: `export GOOGLE_CREDENTIALS=$(cat $HOME/terraform-admin-sa.json)`
+1. Set the location of JSON key: `export GOOGLE_APPLICATION_CREDENTIALS=$HOME/terraform-admin-sa.json`
 
 ## Bootstrap
 

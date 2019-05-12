@@ -10,7 +10,7 @@ env:
   global:
   - PATH="${HOME}/bin:${PATH}"
   - TMPDIR="${TMPDIR:-/tmp}"
-  - GOOGLE_CREDENTAILS="${HOME}/terraform-admin-sa.json"
+  - GOOGLE_APPLICATION_CREDENTIALS="${HOME}/terraform-admin-sa.json"
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_3a65fcd164d2_key -iv $encrypted_3a65fcd164d2_iv
